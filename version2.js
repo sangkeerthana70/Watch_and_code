@@ -25,7 +25,7 @@ function displayTodos() {
  // to the console by adding another function inside it.
  
  // results will be
- My Todos : ['item1', 'item2', 'item3', 'new todo', 'new todo'];
+    todos : ['item1', 'item2', 'item3', 'new todo', 'new todo'];
  // passing in a parameter in the function addTodos by customising a function.
  function addTodo(todos) {
     todos.push(todos);
@@ -35,14 +35,14 @@ function displayTodos() {
 addTodo('some stuff')// here some stuff is the argument we are passing in.
 displayTodos()
 //will display as
-My Todos : ['item1', 'item2', 'item3', 'new todo', 'new todo', 'some stuff'];
+todos : ['item1', 'item2', 'item3', 'new todo', 'new todo', 'some stuff'];
  
 //function to change the todos
 function changeTodo() {
     todos[0] = 'some new value';
 }
 // customise the same changeTodo function using parameters
-function changeTodo(position, new value) {
+function changeTodo(position, newValue) {
     todos[position] =  newValue;
     displayTodos();
 }
@@ -52,17 +52,19 @@ changeTodo (0, 'changed')
 ['changed', 'item1', "item2", "item3", "new todo", "new todo", "new todo", "hello there"]
 changeTodo(0, "changed again"); // will display changed result as
 ['changed again', 'item1', "item2", "item3", "new todo", "new todo", "new todo", "hello there"]
+
 //function to delete the todos
 function deleteTodo(position) {
     todos.splice(position,1);
     displayTodos();
 }
-// will display result as with index 0 removed
-My todos:['item1', "item2", "item3", "new todo", "new todo", "new todo", "hello there"]
-deleteTodo(0) // will delete 'item1'
-deleteTodo(2) // will remove "new todo" from the array
+// will display result as with index 0 'item1' removed
+My todos:["item2", "item3", "new todo", "new todo", "new todo", "hello there"]
+deleteTodo(0) // will delete 'item2'
+My todos:["item3", "new todo", "new todo", "hello there"]
+deleteTodo(2) // will remove the extra "new todo" from the array
 
-My todos: ["item2", "item3",  "new todo", "hello there"]    
+My todos: ["item3",  "new todo", "hello there"]    
     
     
     
