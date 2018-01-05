@@ -1,0 +1,2 @@
+Adding a debugger can help us fix the code by understanding what is happening
+inside of the code.
