@@ -1,0 +1,29 @@
+Creating functions inside functions. We can pass functions as parameters.
+
+Eg function runWithDebugger(function logtenNumbers() {
+    for (var i=0; i<10; i++) {
+        console.log(i);
+    }
+});
+
+Eg: setTimeout(function() {
+    console.log('Wake up Anu!);
+}, 5000);// this is like an alarm clock and turns this function like a timer.
+
+===forEach===
+Eg: students.forEach(logName)//here forEach is a built in function that is the
+equivalent of the forLoop.
+will display results as 
+Jonathan
+Jenny
+===Customising forEach====
+function forEach(myArray, myFunction) {
+    for(var i=0; i<array.length; i++) {
+        myFunction(myArray[i]);
+    }
+}
+
+
+
+
+Elliot.
