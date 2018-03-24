@@ -195,13 +195,38 @@ Also we have deleted the displayTodos function from the var handlers object.*/
 // the this.displayTodos at the end of all the methods and finally get rid of 
 // the displayTodos function.
 
+/*Version-9 dynamic list display
+
 1)Finally we have the var todoList object with todos array and functions inside it 
 that add, change , delete or toggle the items in the todos array.Accounts
 2)Second we have the var handlers object that handle user interaction (by 
 accessing the DOM).On click events after the button is clicked.
 3)Third we have the var view object which shows the user what the todoList
 looks like and does nothing else.
-4)We have an organised way of coding.
+4)We have an organised way of coding.*/
+
+var view = {
+    displayTodos: function() { //creates a dynamic list display.
+        var todosUl = document.querySelector('ul');
+        todosUl.innerHTML = "";
+        for (var i = 0; i < todoList.todos.length; i++) { //iterate through the todoList array to grab the items.
+            var todoLi = document.createElement('li'); //creates a list element.
+            var todo = todoList.todos[i]; //create a variable to access each todo item for copletion if/else statement. Saves us from typing todoList.todos[i] repeatedly.
+            var todoTextWithCompletion = "";
+
+            if (todo.completed === true) {
+                todoTextWithCompletion = "(x) " + todo.todoText;
+            }
+            else {
+                todoTextWithCompletion = "( ) " + todo.todoText;
+            }
+
+            todoLi.textContent = todoTextWithCompletion; //replaces line below and includes completion info.
+            // todoLi.textContent = todoList.todos[i].todoText; //adds the todoText to the list item
+            todosUl.appendChild(todoLi); //places the list element with text into the unordered list.
+        }
+    }
+};
 
 
 
